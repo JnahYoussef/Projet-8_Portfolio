@@ -34,7 +34,7 @@ const experience = {
   items: [
     {
       company: "OpenClassRooms",
-      position: "Développeur Web - Etudiant",
+      position: "Développeur Web - Reconversion",
       duration: "2024 - Présent",
     },
     {
@@ -155,7 +155,7 @@ const About = () => {
           <div className="min-h-[70vh] w-full">
 
             {/*About me*/}
-            <TabsContent value="aboutMe" className="w-full text-center xl:text-left">
+            <TabsContent value="aboutMe" className="w-full text-center xl:text-left"> 
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-3xl font-bold">{aboutMe.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{aboutMe.description}</p>
@@ -180,7 +180,7 @@ const About = () => {
                     {experience.items.map((item, index) => (
                       <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                         <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[320px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
+                        <h3 className="text-xl max-w-[360px] min-h-[60px] text-center lg:text-left">{item.position}</h3>
                         <div className="flex items-center gap-3">
                           {/* dot */}
                           <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
