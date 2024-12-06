@@ -1,7 +1,7 @@
 "use client";
 
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaSass } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiMongodb, SiGithub } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiMongodb, SiGithub, SiNotion } from "react-icons/si";
 
 // about me
 const aboutMe = {
@@ -103,6 +103,10 @@ const skills = {
       name: "Next.js",
     },
     {
+      icon: <FaSass />,
+      name: "Sass",
+    },
+    {
       icon: <SiMongodb />,
       name: "MongoDB",
     },
@@ -115,8 +119,8 @@ const skills = {
       name: "Github",
     },
     {
-      icon: <FaSass />,
-      name: "Sass",
+      icon: <SiNotion />,
+      name: "Notion",
     },
   ],
 };
