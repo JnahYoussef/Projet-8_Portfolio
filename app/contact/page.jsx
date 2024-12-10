@@ -3,9 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
 import  { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const info = [
@@ -28,8 +26,6 @@ const info = [
 
 import { motion } from "framer-motion";
 
-
-
 const Contact = () => {
   return (
     <motion.section 
@@ -43,13 +39,13 @@ const Contact = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-3xl text-accent">Travaillons ensemble</h3>
-              <p className="text-white/60">N'hésitez pas à me contacter, je suis ouvert à toute opportunité de travail qui correspond à mes compétences et à mes intérêts.</p>
+              <p className="text-white/60">N&apos;hésitez pas à me contacter, je suis ouvert à toute opportunité de travail qui correspond à mes compétences et à mes intérêts.</p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="Nom" placeholder="Nom" />
-                <Input type="Prénom" placeholder="Prénom" />
-                <Input type="Email" placeholder="Email" />
-                <Input type="Téléphone" placeholder="Téléphone" />
+                <Input type="text" placeholder="Nom" />
+                <Input type="text" placeholder="Prénom" />
+                <Input type="email" placeholder="Email" />
+                <Input type="tel" placeholder="Téléphone" />
               </div>
               {/* select */}
               <Select>
@@ -59,9 +55,9 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>séléctionner un service</SelectLabel>
-                    <SelectItem value="est">Site web</SelectItem>
-                    <SelectItem value="cst">Application mobile</SelectItem>
-                    <SelectItem value="mst">SEO et Accessibilité</SelectItem>
+                    <SelectItem value="website">Site web</SelectItem>
+                    <SelectItem value="application">Application mobile</SelectItem>
+                    <SelectItem value="seo">SEO et Accessibilité</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

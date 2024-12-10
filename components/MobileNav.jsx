@@ -38,7 +38,7 @@ const MobileNav = () => {
                 <DialogTitle className="sr-only">Menu de navigation</DialogTitle>
                 
                 {/* Description pour l'accessibilité */}
-                <Description className="sr-only"> Utilisez ce menu pour naviguer entre les sections principales de l'application.</Description>
+                <Description className="sr-only"> Utilisez ce menu pour naviguer entre les sections principales de l&apos;application.</Description>
 
                 {/*logo */}
                 <div className="mt-32 mb-40 text-center texte-2xl">

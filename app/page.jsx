@@ -60,7 +60,7 @@ const Home = () => {
             <h1 className="h1">
               Salut, je suis <br /> <span className="text-accent xl:text-7xl font-extrabold">Youssef JNAH</span> 
             </h1>
-            <p className="max-w-[480px] mt-9 mb-9 text-white/80">Je suis développeur web frontend junior, passionné par la création de sites et d'applications web modernes et fonctionnelles.</p>
+            <p className="max-w-[480px] mt-9 mb-9 text-white/80">Je suis développeur web frontend junior, passionné par la création de sites et d&apos;applications web modernes et fonctionnelles.</p>
           {/* button & Socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
