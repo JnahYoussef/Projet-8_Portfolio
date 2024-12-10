@@ -43,7 +43,7 @@ const works = [
     num: '01',
     category: 'Frontend',
     title: "Booki",
-    description: "Créer la page d'accueil d'une agence de voyage.",
+    description: "Créer un prototype de site en intégrant la maquette conçue par le designer UI, en HTML et CSS.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }],
     image: "/assets/work/Booki.webp",
     live: "https://jnahyoussef.github.io/Projet-2_Booki/",
@@ -53,18 +53,18 @@ const works = [
     num: '02',
     category: 'Frontend',
     title: "Sophie Bluel",
-    description: "Créer une page web dynamique du portfolio d’une architecte d’intérieur.",
+    description: "Créer une page web responsive pour présenter le portfolio d'une architecte d'intérieur, avec une interface intuitive et fonctionnelle.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
     image: "/assets/work/Sophie_Bluel.webp",
-    live: "https://jnahyoussef.github.io/Projet_3_Sophie-Bluel/",
+    live: "https://sophie-bluel-architect.vercel.app/",
     github: "https://github.com/JnahYoussef/Projet_3_Sophie-Bluel.git",
   },
   {
     num: '03',
     category: 'Frontend',
     title: "Nina Carducci",
-    description: "Optimiser le référencement d'un site de photographe.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }, { name: "SEO" }, { name: "Accessibilité" }],
+    description: "Optimiser le référencement d'un site de photographe pour assurer une meilleure accessibilité, des performances optimisées et un bon référencement SEO..",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }, { name: "SEO" }],
     image: "/assets/work/Nina_Carducci.webp",
     live: "https://jnahyoussef.github.io/Projet_4_Nina-Carducci/",
     github: "https://github.com/JnahYoussef/Projet_4_Nina-Carducci.git",
@@ -73,27 +73,27 @@ const works = [
     num: '04',
     category: 'Frontend',
     title: "Kasa",
-    description: "Créer une application web de location immobilière.",
+    description: "Créer une application web de location d’appartements entre particuliers. Il inclut des fonctionnalités comme l’affichage des annonces, des descriptions détaillées et un système de navigation dynamique.",
     stack: [{ name: "Html 5" }, { name: "Javascript" }, { name: "React" }, { name: "Node.js" }, { name: "Sass" }],
     image: "/assets/work/Kasa.webp",
-    live: "",
+    live: "https://kasa-app-five.vercel.app/",
     github: "https://github.com/JnahYoussef/Projet-5_Kasa.git",
   },
   {
     num: '05',
     category: 'Backend',
     title: "Mon Vieux Grimoire",
-    description: "Développer le back-end d'un site de notation de livres.",
+    description: "Développer le back-end d'un site web de gestion de livres, permettant aux utilisateurs d'ajouter, de noter et de partager des ouvrages.",
     stack: [{ name: "React" }, { name: "Node.js" }, { name: "Express" }, { name: "MongoDB" }],
     image: "/assets/work/Mon_Vieux_Grimoire.webp",
-    live: "",
+    live: "https://mon-vieux-grimoire-livres.vercel.app/",
     github: "https://github.com/JnahYoussef/P6_Mon-Vieux-Grimoire.git",
   },
   {
     num: '06',
     category: 'Gestion de projets',
     title: "Menu Maker by Qwenta",
-    description: "Planifier le développement d'un site de création de menus de restaurants.",
+    description: "Planifier le développement d'une application web permettant aux utilisateurs de concevoir, personnaliser et gérer des menus interactifs.",
     stack: [ { name: "Notion" }, { name: "Kanban" }, { name: "Agile" }],
     image: "/assets/work/Menu_Maker_by_Qwenta.webp",
     live: "",
@@ -105,7 +105,7 @@ const works = [
     title: "Portfolio",
     description: "Créer et publier mon portfolio de développeur.",
     stack: [ { name: "Next"}, { name: "Tailwind.css" }, { name: "React" }, { name: "Node.js" }],
-    image: "/assets/work/portfolio.webp",
+    image: "/assets/work/Portfolio.webp",
     live: "",
     github: "https://github.com/JnahYoussef/Projet_8_Portfolio.git",
   },
@@ -128,14 +128,14 @@ const Projects = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
+          <div className="w-full xl:w-[55%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+            <div className="flex flex-col gap-[20px] h-[50%]">
               {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {work.num}
               </div>
               {/* project title */}
-              <h2 className="text-5xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-6xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {work.title}
               </h2>
               {/* project description */}
@@ -196,7 +196,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
+          <div className="w-full xl:w-[45%]">
             <Swiper 
               spaceBetween={30} 
               slidesPerView={1} 
@@ -216,6 +216,9 @@ const Projects = () => {
                           fill 
                           className="object-cover object-top" 
                           alt={work.title} 
+                          quality={100}
+                          priority
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                     </div>

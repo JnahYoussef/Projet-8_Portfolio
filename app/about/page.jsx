@@ -30,7 +30,7 @@ const aboutMe = {
 // Experiences
 const experience = {
   title: "Mes expériences",
-  description: "Voici mon parcour professionnel.",
+  description: "",
   items: [
     {
       company: "OpenClassRooms",
@@ -49,7 +49,7 @@ const experience = {
 // Education data
 const education = {
   title: "Formations",
-  description: "Voici mon parcour de formation.",
+  description: "",
   items: [
     {
       institution: "OpenClassRomms",
@@ -223,7 +223,7 @@ const About = () => {
             {/*Skills*/}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap[30px] text-center xl:text-left">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-3xl font-bold">{skills.title}</h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
                 </div>

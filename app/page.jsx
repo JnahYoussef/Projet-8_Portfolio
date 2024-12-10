@@ -2,16 +2,58 @@
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
+/* importer head pour le SEO */
+import Head from 'next/head';
+
 /* Components */
 import Socials from "@/components/Socials";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
+  // Définir le contenu des données structurées JSON-LD
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Youssef JNAH",
+    "jobTitle": "Développeur Web Frontend",
+    "url": "",
+    "sameAs": [
+      "",
+      "https://github.com/JnahYoussef"
+    ],
+    "image": "",
+    "telephone": "(+33) 7 67 44 66 52", 
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressCountry": "France"
+    }
+  };
+
   return (
     <section className="h-full">
+      {/* SEO */}
+      <Head>
+        {/* Métadonnées SEO */}
+        <title>Youssef JNAH - Développeur Web Frontend</title>
+        <meta name="description" content="Développeur Web Frontend passionné, spécialisé dans la création de sites web modernes. Découvrez mon portfolio, mon CV et mes projets." />
+        <meta name="keywords" content="Youssef JNAH, Développeur Web, Frontend Developer, Portfolio, CV, JavaScript, React, Web Developer" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Youssef JNAH" />
+        
+        {/* Données structurées JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData),
+          }}
+        />
+      </Head>
+
+      {/* Contenu */}
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-20">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Développeur Web</span>
