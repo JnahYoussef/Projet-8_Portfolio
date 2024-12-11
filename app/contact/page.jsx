@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react"; // Importer useState pour gérer l'état du formulaire
+import axios from "axios"; // Importer axios pour envoyer les requêtes HTTP
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import  { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -24,9 +27,42 @@ const info = [
   },
 ];
 
-import { motion } from "framer-motion";
-
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null);
+
+  // Fonction pour gérer les changements dans le formulaire
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Fonction pour soumettre le formulaire
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Remplace l'URL par celle de ton formulaire Formspark
+      const response = await axios.post('https://submit-form.com/Liltai6Jd', formData);
+
+      if (response.status === 200) {
+        setStatus("Message envoyé avec succès !");
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", service: "", message: "" }); // Réinitialiser le formulaire
+      }
+    } catch (error) {
+      setStatus("Une erreur est survenue, veuillez réessayer.");
+    }
+  };
+
   return (
     <motion.section 
       initial={{opacity: 0}} 
@@ -35,20 +71,44 @@ const Contact = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* form */}
-          <div className="xl:w-[54%] order-2 xl:order-none">
-            <form action="https://submit-form.com/Liltai6Jd" className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+          {/* Formulaire */}
+          <div className="xl:w-[60%] order-2 xl:order-none">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-8 bg-[#27272c] rounded-xl">
               <h3 className="text-3xl text-accent">Travaillons ensemble</h3>
               <p className="text-white/60">N&apos;hésitez pas à me contacter, je suis ouvert à toute opportunité de travail qui correspond à mes compétences et à mes intérêts.</p>
-              {/* input */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="Nom" />
-                <Input type="text" placeholder="Prénom" />
-                <Input type="email" placeholder="Email" />
-                <Input type="tel" placeholder="Téléphone" />
+              {/* Champs du formulaire */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Input 
+                  type="text" 
+                  placeholder="Nom" 
+                  name="firstName" 
+                  value={formData.firstName} 
+                  onChange={handleChange} 
+                />
+                <Input 
+                  type="text" 
+                  placeholder="Prénom" 
+                  name="lastName" 
+                  value={formData.lastName} 
+                  onChange={handleChange} 
+                />
+                <Input 
+                  type="email" 
+                  placeholder="Email" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                />
+                <Input 
+                  type="tel" 
+                  placeholder="Téléphone" 
+                  name="phone" 
+                  value={formData.phone} 
+                  onChange={handleChange} 
+                />
               </div>
-              {/* select */}
-              <Select>
+              {/* Select Service */}
+              <Select value={formData.service} onChange={(value) => setFormData({ ...formData, service: value })}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="séléctionner un service" />
                 </SelectTrigger>
@@ -61,13 +121,21 @@ const Contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* textarea */}
-              <Textarea className="h-[100px]" placeholder="Ecrivez votre message" />
-              {/* button */}
-              <Button  size="md" className="max-w-40">Envoyer</Button>
+              {/* Message */}
+              <Textarea 
+                className="h-[100px]" 
+                placeholder="Ecrivez votre message" 
+                name="message" 
+                value={formData.message} 
+                onChange={handleChange} 
+              />
+              {/* Button */}
+              <Button type="submit" size="md" className="max-w-40">Envoyer</Button>
+              {status && <p className="text-center mt-4 text-white">{status}</p>}
             </form>
           </div>
-          {/* contact info */}
+
+          {/* Contact Info */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => {
@@ -89,6 +157,6 @@ const Contact = () => {
       </div>
     </motion.section>
   );
-}
+};
 
 export default Contact;

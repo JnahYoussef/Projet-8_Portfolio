@@ -76,7 +76,7 @@ const works = [
     description: "Créer une application web de location d’appartements entre particuliers. Il inclut des fonctionnalités comme l’affichage des annonces, des descriptions détaillées et un système de navigation dynamique.",
     stack: [{ name: "Html 5" }, { name: "Javascript" }, { name: "React" }, { name: "Node.js" }, { name: "Sass" }],
     image: "/assets/work/Kasa.webp",
-    live: "https://kasa-app-five.vercel.app/",
+    live: "https://projet-5-kasa.vercel.app/",
     github: "https://github.com/JnahYoussef/Projet-5_Kasa.git",
   },
   {
