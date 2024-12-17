@@ -51,7 +51,6 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      // Remplace l'URL par celle de ton formulaire Formspark
       const response = await axios.post('https://submit-form.com/Liltai6Jd', formData);
 
       if (response.status === 200) {
@@ -78,6 +77,7 @@ const Contact = () => {
               <p className="text-white/60">N&apos;hésitez pas à me contacter, je suis ouvert à toute opportunité de travail qui correspond à mes compétences et à mes intérêts.</p>
               {/* Champs du formulaire */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label className="sr-only" htmlFor="firstName">Nom</label>
                 <Input 
                   type="text" 
                   placeholder="Nom" 
@@ -85,6 +85,7 @@ const Contact = () => {
                   value={formData.firstName} 
                   onChange={handleChange} 
                 />
+                <label className="sr-only" htmlFor="lastName">Prénom</label>
                 <Input 
                   type="text" 
                   placeholder="Prénom" 
@@ -92,6 +93,7 @@ const Contact = () => {
                   value={formData.lastName} 
                   onChange={handleChange} 
                 />
+                <label className="sr-only" htmlFor="email">Email</label>
                 <Input 
                   type="email" 
                   placeholder="Email" 
@@ -99,6 +101,7 @@ const Contact = () => {
                   value={formData.email} 
                   onChange={handleChange} 
                 />
+                <label className="sr-only" htmlFor="phone">Téléphone</label>
                 <Input 
                   type="tel" 
                   placeholder="Téléphone" 
@@ -122,6 +125,7 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {/* Message */}
+              <label className="sr-only" htmlFor="message">Message</label>
               <Textarea 
                 className="h-[100px]" 
                 placeholder="Ecrivez votre message" 

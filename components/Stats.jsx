@@ -17,6 +17,7 @@ const stats = [
     },
 ];
 
+// composant pour afficher les statistiques
 const Stats = () => {
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">

@@ -106,14 +106,15 @@ const works = [
     description: "Créer et publier mon portfolio de développeur.",
     stack: [ { name: "Next"}, { name: "Tailwind.css" }, { name: "React" }, { name: "Node.js" }],
     image: "/assets/work/Portfolio.webp",
-    live: "",
+    live: "https://portfolio-youssef-jnah.vercel.app/",
     github: "https://github.com/JnahYoussef/Projet_8_Portfolio.git",
   },
 ];
 
 const Projects = () => {
-  const [work, setWork] = useState(works[0]);
+  const [work, setWork] = useState(works[0]); // initialiser le projet avec le premier élément du tableau
 
+// fonction pour gérer le changement de diapositive
   const handleSlideChange = (swiper) => {
     //obtenir l'index de la diapositive active
     const currentIndex = swiper.activeIndex;
