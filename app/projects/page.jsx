@@ -66,7 +66,7 @@ const works = [
     description: "Optimiser le référencement d'un site de photographe pour assurer une meilleure accessibilité, des performances optimisées et un bon référencement SEO..",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }, { name: "SEO" }],
     image: "/assets/work/Nina_Carducci.webp",
-    live: "https://jnahyoussef.github.io/Projet_4_Nina-Carducci/",
+    live: "https://jnahyoussef.github.io/Projet-4_Nina-Carducci/",
     github: "https://github.com/JnahYoussef/Projet_4_Nina-Carducci.git",
   },
   {
